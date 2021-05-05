@@ -1,0 +1,14 @@
+scrape_configs:
+
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          env: local
+          region: eu-west-1
+
+  - job_name: 'helloworld_flask'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['app:5000']
